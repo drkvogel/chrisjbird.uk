@@ -1,0 +1,68 @@
+#!/bin/bash
+
+# yopush
+# upload yeoman ./dist directory to host, using basename of parent directory as default dest path
+# cjb 2016-10-25
+
+# where's the newer version of this?
+
+REMOTEHOST="web456.webfaction.com"
+REMOTEUSER="drkvogel"
+REMOTEROOT="/home/drkvogel/webapps/chrisjbird/"
+REMOTEDIR="$(basename "$(dirname "$(pwd)")")"
+DISTDIR="_site"
+APPTYPE="jekyll"
+REMINDER="Remember to run gulp first to build into ./_site"
+
+if [ ! -e $DISTDIR ]
+then
+    #echo $(basename $(dirname $(pwd))) " does not look like a yeoman directory, exiting"
+    echo $(pwd)" does not look like a $APPTYPE directory, exiting"
+    exit 0
+fi
+
+# if [ -z "$1" ] # if $1 is zero length!
+# then
+#     read -p "Remote host (...)? [$REMOTEHOST]  " answer;    # -n1 restrict to 1 char -r raw -s silent (password)
+#     # PS3='Remote host? [$REMOTEHOST]'; 
+#     # select answer in oqsweb red wf; 
+#     # do 
+#     #     echo $answer
+#     #     break;
+#     # done
+# else
+#     answer=$1;
+# fi
+
+# case $answer in
+#     # oqsweb)
+#     #     REMOTEHOST="oqsweb.ndph.ox.ac.uk";;
+#     # red)
+#     #     REMOTEHOST="red.ctsu.ox.ac.uk"
+#     #     REMOTEROOT="/user/cp/public_html/cjb/bbquiz/";;
+#     # wf)
+#     #     REMOTEHOST="web456.webfaction.com"
+#     #     REMOTEUSER="drkvogel"
+#     #     REMOTEROOT="/home/drkvogel/webapps/main/bbquiz/"
+#     #     ;;
+#     '')
+#         ;;  # default
+#     *)  
+#         echo "Unknown host, exiting"
+#         exit;;
+# esac
+
+#echo "option: $answer"
+# REMOTEPATH=$REMOTEROOT$REMOTEDIR
+REMOTEPATH=$REMOTEROOT
+##read -p 'Continue (y/n)? ' -n1 answer; echo; [[ $answer = [yY] ]] || exit
+
+echo $REMINDER
+echo "Copying to $REMOTEUSER@$REMOTEHOST:$REMOTEPATH"
+#echo "($REMOTEPATH must exist on server already?)"
+read -rsp $'Press any key to continue...\n' -n1 key
+rsync -r --info=progress2 -e ssh $DISTDIR/* $REMOTEUSER@$REMOTEHOST:$REMOTEPATH
+#scp -r ./dist/* $REMOTEUSER@$REMOTEHOST:$REMOTEPATH
+exit 0
+
+#do [[ $answer = oqsweb ]] && { echo Correct; break; } || echo Try again; done

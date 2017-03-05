@@ -18,4 +18,4 @@ gplus_username:  +ChrisBird001
 google-analytics:
   id: ""
 
-exclude: ['package.json', 'src' , 'node_modules']
+exclude: ['package.json', 'src' , 'node_modules', 'yarn.lock', 'gulpfile.js', 'pushlive']
