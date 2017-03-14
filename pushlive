@@ -6,7 +6,7 @@
 
 # where's the newer version of this?
 
-REMOTEHOST="web456.webfaction.com"
+REMOTEHOST="web571.webfaction.com"
 REMOTEUSER="drkvogel"
 REMOTEROOT="/home/drkvogel/webapps/chrisjbird/"
 REMOTEDIR="$(basename "$(dirname "$(pwd)")")"
