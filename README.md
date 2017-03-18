@@ -1,8 +1,11 @@
-# Particle Jekyll Theme
+
+
+
+# chrisjbird.uk portfolio website
+
+Using the Particle theme, forked from https://github.com/nrandecker/particle.
 
 ![](./particle.jpg)
-
-Forked from https://github.com/nrandecker/particle.
 
 This is a simple and minimalist template for Jekyll designed for developers that want to show off their portfolio.
 
@@ -23,6 +26,11 @@ The Theme features:
 2. Fork the [Particle Theme](https://github.com/nrandecker/particle/fork)
 3. Clone the repo you just forked.
 4. Edit `_config.yml` to personalize your site.
+
+p.s. On Windows, as well as installing https://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-2.2.6.exe from http://rubyinstaller.org/downloads/, you may need to install [RubyInstaller DevKit](https://github.com/oneclick/rubyinstaller/wiki/development-kit).
+http://jekyllrb.com/docs/troubleshooting/#installation-problems
+
+
 
 ## Site and User Settings
 
@@ -47,6 +55,7 @@ gplus_username:  lorem_ipsum
 **Don't forget to change your url before you deploy your site!**
 
 ## Color and Particle Customization
+
 - Color Customization
   - Edit the sass variables
 - Particle Customization
