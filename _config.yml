@@ -7,8 +7,9 @@ url: "http://chrisjbird.uk" # the base hostname & protocol for your site e.g. ht
 
 # User settings
 username: Chris Bird
-user_description: Programmer, Web Developer, Bassist, Yak Shaver...
-user_title: Software Developer
+user_title: Programmer/Web Developer
+user_description: Polyglot Programmer, Web Developer - "Jack of all trades, master of some"!
+# yak shaver
 email: chrisjbird@gmail.com
 twitter_username: drkvogel
 github_username:  drkvogel
