@@ -61,8 +61,13 @@ echo $REMINDER
 echo "Copying to $REMOTEUSER@$REMOTEHOST:$REMOTEPATH"
 #echo "($REMOTEPATH must exist on server already?)"
 read -rsp $'Press any key to continue...\n' -n1 key
-rsync -r --info=progress2 -e ssh $DISTDIR/* $REMOTEUSER@$REMOTEHOST:$REMOTEPATH
+# rsync -r --info=progress2 -e ssh $DISTDIR/* $REMOTEUSER@$REMOTEHOST:$REMOTEPATH
+rsync -r -e ssh $DISTDIR/* $REMOTEUSER@$REMOTEHOST:$REMOTEPATH
 #scp -r ./dist/* $REMOTEUSER@$REMOTEHOST:$REMOTEPATH
 exit 0
 
 #do [[ $answer = oqsweb ]] && { echo Correct; break; } || echo Try again; done
+
+# 2017-05-31 16:00:37 cbird@Q108 ~/Projects/chrisjbird.uk
+# $ ./pushlive
+# rsync: --info=progress2: unknown option
