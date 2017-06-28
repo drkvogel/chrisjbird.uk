@@ -3,7 +3,7 @@ title: Christopher John Bird
 description: Homepage of Chris Bird
 # baseurl: "/" # the subpath of your site, e.g. /blog
 # url: "localhost:3000" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
-url: "http://chrisjbird.uk" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
+url: "http://chrisjbird.uk:3001" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
 
 # User settings
 username: Chris Bird
